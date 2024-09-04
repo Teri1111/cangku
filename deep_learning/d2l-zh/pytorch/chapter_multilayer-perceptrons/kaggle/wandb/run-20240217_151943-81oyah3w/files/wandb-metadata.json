@@ -1,0 +1,31 @@
+{
+    "os": "macOS-14.3.1-arm64-arm-64bit",
+    "python": "3.11.5",
+    "heartbeatAt": "2024-02-17T07:19:46.255139",
+    "startedAt": "2024-02-17T07:19:43.605682",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "Downloads/d2l-zh/pytorch/chapter_multilayer-perceptrons/kaggle.ipynb",
+    "codePathLocal": null,
+    "root": "/Users/meinv",
+    "host": "bogon",
+    "username": "meinv",
+    "executable": "/Users/meinv/anaconda3/bin/python",
+    "cpu_count": 8,
+    "cpu_count_logical": 8,
+    "disk": {
+        "/": {
+            "total": 460.4317207336426,
+            "used": 67.42115783691406
+        }
+    },
+    "gpuapple": {
+        "type": "arm",
+        "vendor": "Apple"
+    },
+    "memory": {
+        "total": 16.0
+    }
+}

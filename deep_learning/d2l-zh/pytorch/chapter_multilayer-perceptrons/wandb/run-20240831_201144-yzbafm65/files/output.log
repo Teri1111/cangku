@@ -1,0 +1,102 @@
+(47439, 41)
+(31626, 40)
+   Id            Address  Sold Price  \
+0   0        540 Pine Ln   3825000.0
+1   1     1727 W 67th St    505000.0
+2   2     28093 Pine Ave    140000.0
+3   3  10750 Braddock Dr   1775000.0
+                                             Summary          Type  \
+0  540 Pine Ln, Los Altos, CA 94022 is a single f...  SingleFamily
+1  HURRY, HURRY.......Great house 3 bed and 2 bat...  SingleFamily
+2  'THE PERFECT CABIN TO FLIP!  Strawberry deligh...  SingleFamily
+3  Rare 2-story Gated 5 bedroom Modern Mediterran...  SingleFamily
+          City    Zip State
+0    Los Altos  94022    CA
+1  Los Angeles  90047    CA
+2   Strawberry  95375    CA
+3  Culver City  90230    CA
+      Id                    Address  \
+0  47439        3034 N Coolidge Ave
+1  47440         565 Kenilworth Ave
+2  47441        3028 N Coolidge Ave
+3  47442  3022 N North Coolidge Ave
+                                             Summary          Type  \
+0  Live within steps to the scenic views on the L...  SingleFamily
+1                 duplex fixer. Input for comps only  SingleFamily
+2  Live within steps to the scenic views on the L...  SingleFamily
+3  Live within steps to the scenic views on the L...  SingleFamily
+          City    Zip State
+0   Dodgertown  90090    CA
+1  San Leandro  94577    CA
+2  Los Angeles  90039    CA
+3   Dodgertown  90090    CA
+(79065, 39)
+             Address          Type  Year built  \
+0        540 Pine Ln  SingleFamily      1969.0
+1     1727 W 67th St  SingleFamily      1926.0
+2     28093 Pine Ave  SingleFamily      1958.0
+3  10750 Braddock Dr  SingleFamily      1947.0
+                                        Heating    Zip State Summary
+0  Heating - 2+ Zones, Central Forced Air - Gas  94022    CA     NaN
+1                                   Combination  90047    CA     NaN
+2                                    Forced air  95375    CA     NaN
+3                                       Central  90230    CA     NaN
+[38, 35, 37]
+numbers: 46201
+Address                        46201
+Type                             174
+Year built                       169
+Heating                         2658
+Cooling                          909
+Parking                         9911
+Lot                            11982
+Bedrooms                         277
+Bathrooms                         24
+Full bathrooms                    17
+Total interior livable area     5296
+Total spaces                      67
+Garage spaces                     57
+Region                          1258
+Elementary School               3567
+Elementary School Score           10
+Elementary School Distance       268
+Middle School                    808
+Middle School Score               10
+Middle School Distance           254
+High School                      921
+High School Score                 10
+High School Distance             359
+Flooring                        1738
+Heating features                1761
+Cooling features                 594
+Appliances included            11288
+Laundry features                3029
+Parking features                9693
+Tax assessed value             54541
+Annual tax amount              21310
+Listed On                       2815
+Listed Price                    6360
+Last Sold On                    6948
+Last Sold Price                 4784
+Zip                             1701
+dtype: int64
+(18,)
+Index(['Year built', 'Lot', 'Bathrooms', 'Full bathrooms',
+       'Total interior livable area', 'Total spaces', 'Garage spaces',
+       'Elementary School Score', 'Elementary School Distance',
+       'Middle School Score', 'Middle School Distance', 'High School Score',
+       'High School Distance', 'Tax assessed value', 'Annual tax amount',
+       'Listed Price', 'Last Sold Price', 'Zip'],
+      dtype='object')
+           Type  Year built       Lot Bedrooms  Listed Price  Last Sold Price  \
+0  SingleFamily    0.443650 -0.018442        2     -0.155958         0.121116
+1  SingleFamily   -0.300151 -0.017988        3     -0.303132        -0.675027
+2  SingleFamily    0.443650 -0.018442        2     -0.137558         0.000000
+        Zip
+0 -1.471684
+1  0.676922
+2 -1.496106
+tensor([[ 0.0485, -0.0185, -2.0580,  0.0000],
+        [-0.2847, -0.0183, -0.3368, -0.1064],
+        [-0.0367, -0.0180,  0.5238, -1.1676],
+        [-0.1219,  0.0000,  0.5238,  0.9547]])
