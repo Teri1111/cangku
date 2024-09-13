@@ -3,6 +3,8 @@
 #include <queue>
 #include <sstream>
 #include <string>
+#include <iostream>
+using namespace std;
 
 struct TreeNode {
     int val;
@@ -78,7 +80,7 @@ public:
         string val;
         istringstream in(str);
         getline(in , val, ',');
-        auto *root = new TreeNode(stoi(val));
+        TreeNode *root = new TreeNode(stoi(val));
 
         queue<TreeNode*> q;
         q.push(root);
@@ -106,6 +108,6 @@ public:
 };
 
 int main(){
-    Solution.
+    
     return 0;
 }

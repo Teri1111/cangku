@@ -1,20 +1,23 @@
 \documentclass{article}
 \usepackage[UTF8]{ctex}
-\usepackage{amsmath}
-\usepackage{geometry}
-\geometry{a4paper,scale=0.8}
-\usepackage{algorithm}
-\usepackage{algpseudocode}
-\usepackage{amsthm}
-\usepackage{placeins} % 引入 placeins 宏包
-\usepackage{fontspec}
+\usepackage{amsmath} % 使用 amsmath 宏包以改进公式排版
+% !TEX TS-program = xelatex
+% !TEX encoding = UTF-8 Unicode
+% !Mode:: "TeX:UTF-8"
+
 
 \setmainfont{Times New Roman}
+\usepackage{geometry}
+\geometry{a4paper,scale=0.8}
+\usepackage{algorithm} % 引入 algorithm 宏包
+\usepackage{algpseudocode} % 引入 algpseudocode 用于编写伪代码
+\usepackage{amsthm}
 
 \begin{document}
+%\{\heiti 黑体}，{\kaishu 楷体} 
 
 \begin{center}
-{\huge \textbf{Exercise 1}}
+{\huge \textbf{Exercis 1}}
 
 \textit{Exercises for Algorithms by Nengjun Zhu.}
 
@@ -24,87 +27,103 @@
 \textbf{Email:}\underline{\qquad \textbf{teri@shu.edu.cn}\qquad}
 \end{center}
 
-\textbf{答案AI含量声明:} 第四题将c++代码转换为伪代码,第五题步骤e
 \begin{itemize}
-    
-
 
 \item[1.] Suppose $a_0=1,  a_1=2, a_2=3, a_k=a_{k-1} + a_{k-2} + a_{k-3} $ for $k\geq 3$. Use strong principle of mathematical induction to prove that $a_n \leq 2^n$ for all integers $n\geq0$.
 
-\paragraph{Proof:} When $0 \leq n \leq 4$, the conclusion is obviously true.
 
-\paragraph{Induction Step:} For $k \geq 5$, assume $a_k \leq 2^k$, then we have:
+
+
+
+\noindent 
+
+\paragraph{证:  } 当 $0 \leq n \leq 4$ 时，结论显然成立。
+
+\paragraph{假设} 对于 $5 \leq k$，假设有 $a_k \leq 2^k$，则我们有：
 \begin{align*}
     a_{k+1} &= a_k + a_{k-1} + a_{k-2} \\
             &\leq 2^k + 2^{k-1} + 2^{k-2} \\
             &= 2^{k-2} (4 + 2 + 1) \\
-            &\leq 2^{k+1}.
+            &\leq 2^{k+1}
 \end{align*}
 
-\paragraph{Conclusion:} Therefore, the conclusion holds.
+\paragraph{结论} 因此结论成立。
+
+
+
+
+
 
 \item[2.] {\large Consider the sorting algorithm shown in Alg.1, which is called BUBBLESORT.}
 \begin{itemize}
 \item[(a)] What is the minimum number of element comparisons? When is this minimum achieved?
 
-\paragraph{Answer:} The minimum number of comparisons is $n - 1$ when the elements are already in ascending order.
+\paragraph{答:}当元素为升序时比较次数最少,为$n - 1$ 次
 
 \item[(b)] What is the maximum number of element comparisons? When is this maximum achieved?
 
-\paragraph{Answer:} The maximum number of comparisons is $\frac{n(n+1)}{2}$ when the elements are in descending order.
+\paragraph{答:}当元素为降序时比较次数最多,为$ \frac{n(n+1)}{2} $ 次
 
-\item[(c)] Express the running time of Alg.1 in terms of the \(O\) and \(\Omega\) notations.
+\item[(c)] Express the running time of Alg.1 in terms of the Ο and Ω notations.
 
-\paragraph{Answer:} Let $g(n) = n - 1$, $h(n) = \frac{n(n+1)}{2}$, thus $f(n) = O(h(n))$, $f(n) = \Omega(g(n))$. The time complexity is $O(n^2)$ and $\Omega(n)$.
+\paragraph{答:} 令$g(n) = n - 1$,$h(n) =  \frac{n(n+1)}{2} $ ,可得$f(n) = O(h(n))$, $f(n) = \Omega(g(n))$
+,时间复杂度为$O(n^2)$,
+$\Omega(n)$。
+\item[(d)] Can the running time of the algorithm be expressed in terms of the Θ notation? Explain.
 
-\item[(d)] Can the running time of the algorithm be expressed in terms of the \(\Theta\) notation? Explain.
-
-\paragraph{Answer:} In the average case, the elements are randomly ordered, requiring about half the swaps, so the time complexity remains $\Theta(n^2)$. Both the worst-case and average-case complexities are $\Theta(n^2)$, making this notation suitable.
+\paragraph{答:} 平均情况下，数组元素是随机排列的，需要进行大约一半的交换操作，时间复杂度依然是$Θ(n^2)$。无论是平均情况还是最坏情况，冒泡排序的时间复杂度都是$Θ(n^2)$。因此，Θ表示法是合适的。
 \end{itemize}
+
+
 
 \item[3.] Fill in the blanks with either true (T) or false (F):
 
-\begin{center}
+  \begin{center}
     \begin{tabular}{|c|c|c|c|c|} 
     \hline
     $f(n)$ & $g(n)$ & $f=O(g) $ &$f=\Omega(g)$  &$f=\Theta(g)$ \\
     \hline\hline
     $2n^3+3n$ & $100n^2 + 2n +100$ &F &T&F \\\hline
-    $50n + \log n $ & $10n+\log\log n$ &T &T& T\\\hline
-    $50n\log n$ & $10n\log\log n$ & F&T& F\\\hline
-    $\log n$ & $\log^2 n$ &T &F&F \\\hline
+    $50n + \mbox{log}n $ & $10n+\mbox{log}\mbox{log}n$ &T &T& T\\\hline
+    $50n\mbox{log}n$ & $10n\mbox{log}\mbox{log}n$ & F&T& F\\\hline
+    $\mbox{log}n$ & $\mbox{log}^2n$ &T &F&F \\\hline
     $n!$ & $5^n$ &F  &T&F\\
     \hline
     \end{tabular}
-\end{center}
+  \end{center}
 
-\FloatBarrier % 确保浮动体不会越过这里
 
 \item[4.] Design a divide-and-conquer algorithm to determine whether two given binary trees $T_1$ and $T_2$ are identical.
 
 \begin{center}
-\begin{algorithmic}[1]
-    \State \textbf{Input:} Two binary trees, \textit{root1} and \textit{root2}
-    \State \textbf{Output:} Boolean value indicating whether the trees are identical
+\begin{algorithm}
+  \caption{isSameTree: Check if two binary trees are identical}
+  \begin{algorithmic}[1] % [1] 启用行号
+      \State \textbf{Input:} Two binary trees, \textit{root1} and \textit{root2}
+      \State \textbf{Output:} Boolean value indicating whether the trees are identical
+  
+      \Function{isSameTree}{root1, root2} % 定义函数
+          \If{root1 = NULL and root2 = NULL} % 开始条件判断
+              \State \Return true
+          \EndIf % 正确结束 If
+          \If{root1 = NULL or root2 = NULL}
+              \State \Return false
+          \EndIf
+          \If{root1.val $\neq$ root2.val}
+              \State \Return false
+          \EndIf
+          \State \Return \Call{isSameTree}{root1.left, root2.left} and \Call{isSameTree}{root1.right, root2.right}
+      \EndFunction % 确保函数有结束
+  \end{algorithmic}
+  \end{algorithm}
 
-    \Function{isSameTree}{root1, root2}
-        \If{root1 = NULL and root2 = NULL}
-            \State \Return true
-        \EndIf
-        \If{root1 = NULL or root2 = NULL}
-            \State \Return false
-        \EndIf
-        \If{root1.val $\neq$ root2.val}
-            \State \Return false
-        \EndIf
-        \State \Return \Call{isSameTree}{root1.left, root2.left} and \Call{isSameTree}{root1.right, root2.right}
-    \EndFunction
-\end{algorithmic}
 \end{center}
+  \paragraph{ }
 
-\FloatBarrier % 确保浮动体不会越过这里
+\item[5.] You are given two sorted lists of size $m$ and $n$ in ascending order. Given an $O(\mbox{log}m + \mbox{log}n)$ time algorithm for computing the $k$-th smallest element in the union of the two lists.
 
-\item[5.] You are given two sorted lists of size $m$ and $n$ in ascending order. Give an $O(\log m + \log n)$ time algorithm for computing the $k$-th smallest element in the union of the two lists.
+
+
 
 \section*{Algorithm Idea}
 
@@ -148,6 +167,6 @@
     \end{enumerate}
 \end{enumerate}
 
-\end{itemize}
 
+\end{itemize}
 \end{document}
